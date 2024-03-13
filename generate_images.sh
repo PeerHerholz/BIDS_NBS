@@ -6,7 +6,7 @@
 
 generate_docker() {
   docker run --rm kaczmarj/neurodocker:0.7.0 generate docker \
-             --base neurodebian:stretch-non-free \
+             --base ubuntu:22.04 \
              --pkg-manager apt \
              --arg DEBIAN_FRONTEND=noninteractive \
              --miniconda \
@@ -15,7 +15,7 @@ generate_docker() {
                pip_install="pandas seedir pybids" \
                create_env='bidsnbs' \
                activate=true \
-            --copy . /home/bids_atlas \
+            --copy . /home/bidsnbs \
             --run-bash "source activate bidsnbs && cd /home/bidsnbs && pip install -e ." \
             --env IS_DOCKER=1 \
             --workdir '/tmp/' \

@@ -1,0 +1,23 @@
+{
+    "session_id": {
+        "LongName": "Please add"
+    },
+    "acq_time": {
+        "LongName": "when was the session acquired?",
+        "Units": "date/time"
+    },  
+    "intervention_type": {
+            "LongName": "what type of intervention happened?",
+            "Levels": {
+                "NIBS": {
+                    "type": "Please add",
+                    "subtype" : "Please add",
+                    "frequency": {
+                        "Value": "Please add",
+                        "unit": "Please add",
+                        "intervention_schedule": "Please add"
+                    }
+                }
+            }           
+        }
+}

@@ -1,0 +1,94 @@
+{
+    "onset": {
+        "LongName": "onset of the trigger",
+        "Units": "seconds (s) from the beginning of the recording"
+        },
+        "duration": {
+            "LongName": "duration of the trigger",
+            "Units": "seconds (s)"
+        },
+        "trial_type": {
+            "LongName": "type of stimulation",
+            "Levels": {
+            }
+        },
+        "value": {
+            "LongName": "Please add",
+            "Levels": {
+            }
+        },
+    "nibs_type": {
+        "Type": "Please add",
+        "Subtype": "Please add",
+        "Description": "Please add",
+        "Manufacturer": "Please add",
+        "DeviceModelName": "Please add",
+        "DeviceSerialNumber": "Please add",
+        "CoilSpec": {
+            "CoilType": "Please add",
+            "CoilWingDiameter": {
+                "Value": "Please add",
+                "Unit": "Please add"
+            },
+            "CoilModelName": "Please add",
+            "CoilSerialNumber": "Please add"
+        },
+        "DeviceFirmware": "Please add",
+        "SoftwareSpecification": {
+            "ChargeDelay": "Please add"
+        },
+        "AuditoryMasking": "Please add",
+        "StimulationProcedure": "Please add"
+    },
+    "nibs_stim_intensity": {
+        "StimulationIntensity": {
+            "Value": "Please add",
+            "Unit": "Please add",
+            "UnitLongName": "Please add"
+        },
+        "MotorThreshold": {
+            "Type": "Please add",
+            "Value": "Please add",
+            "Unit": "Please add",
+            "UnitLongName": "Please add",
+            "Target": "Please add"
+        },
+        "PulseSpec": {
+            "Waveform": "Please add",
+            "PulseWitdh": {
+                "Value": "Please add",
+                "Unit": "Please add",
+                "PrimaryEFieldDirection": "Please add",
+                "SecondaryEFieldDirection": "Please add"
+            },
+		"InterStimulusInterval": {
+                "Interval": "Please add",
+                "Unit": "Please add",
+                "Mode": "Please add"
+            },
+            "PulsesNumber": "Please add",
+            "StimulationIntensityProcedire": "Please add"
+        },
+        "nibs_target": {
+            "LongName": "Please add",
+            "Levels": {
+                "S 16": "Please add"
+            }
+        },
+        "nibs_target_coord": {
+            "PositioningMatrix_1": "Please add",
+            "pos_ydir_1": "Please add",
+            "photo": "Please add",
+            "CoordinateSystem": "Please add",
+            "CoordinateUnits": "Please add",
+            "CoordinateSystemDescription": "Please add",
+            "NeuronavigationSoftwareVersions": "Please add",
+            "CameraManufacturer": "Please add",
+            "CameraModelName": "Please add",
+            "CameraSerialNumber": "Please add",
+            "NeuronavigationInput": "Please add",
+            "NeuronavigationAdditionalInfo": "Please add",
+            "description": "Please add"
+        }
+    }
+}

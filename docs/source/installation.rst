@@ -4,8 +4,8 @@ Installation
 
 In general, there are two distinct ways to install and use ``bidsnbs``:
 either through virtualization/container technology, that is `Docker`_ or
-`Singularity`_, or in a `Bare metal version (Python 3.8+)`_.
-Once you are ready to run ``bidsnbs``, see `Usage <./usage.rst>`_ for details.
+`Singularity`_, or in a `Bare metal version (Python 3.10+)`_.
+Once you are ready to run ``bidsnbs``, see `Usage <https://peerherholz.github.io/BIDS_NBS/usage>`_ for details.
 
 Docker
 ======
@@ -22,7 +22,7 @@ Option 1: pulling from the `dockerhub registry <https://hub.docker.com/repositor
 
     docker pull peerherholz/bidsnbs:version
 
-Option 2: pulling from the `github container registry <https://github.com/PeerHerholz/bidsnbs/pkgs/container/bids_bep16_conv>`_ :
+Option 2: pulling from the `github container registry <https://github.com/PeerHerholz/bidsnbs/pkgs/container/bidsnbs>`_ :
 
 .. code-block:: bash
 
@@ -64,7 +64,7 @@ you can run ``bidsnbs`` like this:
         nbs_file
         
 
-Please have a look at the examples under `Usage <./usage.rst>`_ to get more information
+Please have a look at the examples under `Usage <https://peerherholz.github.io/BIDS_NBS/usage>`_ to get more information
 about and familiarize yourself with ``bidsnbs``'s functionality.
 
 Singularity

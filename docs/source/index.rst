@@ -4,13 +4,12 @@
    :align: center
    :width: 400px
 
-.. centered:: A small toolbox to ease up the conversion from `BIDS <https://bids.neuroimaging.io/>`_ to BIDS-NBS datasets.
+.. centered:: bidsnbs A small toolbox to ease up the conversion from `BIDS <https://bids.neuroimaging.io/>`_ to BIDS-NBS datasets.
 
 
 .. image:: https://github.com/PeerHerholz/BIDS_NBS/actions/workflows/docs.yml/badge.svg
         :target: https://github.com/PeerHerholz/BIDS_NBS/actions/workflows/docs.yml
-
-
+ 
 .. image:: https://img.shields.io/pypi/v/BIDS_NBS.svg
         :target: https://pypi.python.org/pypi/BIDS_NBS
 

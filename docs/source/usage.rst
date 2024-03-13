@@ -1,8 +1,8 @@
 .. _usage:
 
-==========
+======
 Usage
-==========
+======
 
 
 
@@ -12,12 +12,12 @@ Execution and the BIDS format
 The general usage of ``bidsnbs`` is rather straightforward as it only requires the user to go through two steps: 1. Preparing the `NBS metadata` 
 and 2. run the `conversion function` to adapt and/or add respective `BIDS NBS` `metadata` to already `BIDS`-compliant datasets.
 The exact command to run ``bidsnbs`` depends on the Installation method and user. Regarding the latter ``bidsnbs`` 
-can either be used as a ``command line tool`` or directly within ``python``. Please refer to the `Tutorial <../../>`_ for a more detailed walkthrough.
+can either be used as a ``command line tool`` or directly within ``python``. Please refer to the `Tutorial <https://peerherholz.github.io/BIDS_NBS/walkthrough>`_ for a more detailed walkthrough.
 
 Here's a very conceptual example of running ``bidsnbs`` via ``CLI``: ::
 
     bidsnbs path/to/BIDS/dataset --get_nbs_files
-    bidsnbs path/to/BIDS/dataset nbs_file optional_arguments
+    bidsnbs path/to/BIDS/dataset nbs_files optional_arguments
 
 and here from within ``python``: ::
 
@@ -32,7 +32,7 @@ and here from within ``python``: ::
                         optional_arguments)
 
 Below, we will focus on the ``CLI`` version. Thus, if you are interested in using ``bidsnbs`` directly within ``python``,
-please check the `Examples <../../>`_.
+please check the `Examples <https://peerherholz.github.io/BIDS_NBS/auto_examples/index>`_.
 
 Changing metadata in-place vs new BIDS dataset
 ==============================================

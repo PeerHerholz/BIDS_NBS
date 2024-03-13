@@ -9,9 +9,9 @@ BIDS NBS
 .. image:: https://img.shields.io/pypi/v/BIDS_NBS.svg
         :target: https://pypi.python.org/pypi/BIDS_NBS
 
-.. image:: https://img.shields.io/docker/pulls/peerherholz/BIDS_NBS
+.. image:: https://img.shields.io/docker/pulls/peerherholz/bidsnbs
     :alt: Dockerpulls
-    :target: https://cloud.docker.com/u/peerherholz/repository/docker/peerherholz/BIDS_NBS
+    :target: https://cloud.docker.com/u/peerherholz/repository/docker/peerherholz/bidsnbs
 
 .. image:: https://img.shields.io/github/repo-size/PeerHerholz/BIDS_NBS.svg
         :target: https://img.shields.io/github/repo-size/PeerHerholz/BIDS_NBS.zip

@@ -4,7 +4,7 @@
    :align: center
    :width: 400px
 
-.. centered:: bidsnbs A small toolbox to ease up the conversion from `BIDS <https://bids.neuroimaging.io/>`_ to BIDS-NBS datasets.
+.. centered:: bidsnbs: A small toolbox to ease up the conversion from `BIDS <https://bids.neuroimaging.io/>`_ to BIDS-NBS datasets.
 
 
 .. image:: https://github.com/PeerHerholz/BIDS_NBS/actions/workflows/docs.yml/badge.svg
@@ -13,9 +13,9 @@
 .. image:: https://img.shields.io/pypi/v/BIDS_NBS.svg
         :target: https://pypi.python.org/pypi/BIDS_NBS
 
-.. image:: https://img.shields.io/docker/pulls/peerherholz/BIDS_NBS
+.. image:: https://img.shields.io/docker/pulls/peerherholz/bidsnbs
     :alt: Dockerpulls
-    :target: https://cloud.docker.com/u/peerherholz/repository/docker/peerherholz/BIDS_NBS
+    :target: https://cloud.docker.com/u/peerherholz/repository/docker/peerherholz/bidsnbs
 
 .. image:: https://img.shields.io/github/repo-size/PeerHerholz/BIDS_NBS.svg
         :target: https://github.com/PeerHerholz/BIDS_NBS.zip
@@ -38,8 +38,8 @@
 Introduction
 ============
 
-``BIDS_NBS`` aims to provide a set of tools for working with
-`BIDS NBS`, specifically the conversion from `BIDS`-compliant datasets to `BIDS-NBS`-compliant datasets by adapting and adding respective metadata information. 
+``bidsnbs`` aims to provide a set of tools for working with `BIDS NBS`, specifically the 
+conversion from `BIDS`-compliant datasets to `BIDS-NBS`-compliant datasets by adapting and adding respective metadata information. 
 
 This documentation showcases the respective functionality and provides details concerning
 its application and modules.

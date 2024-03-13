@@ -8,9 +8,14 @@ sphinx
 duecredit
 doctr
 ipython
+matplotlib
+seedir
 # These are dependencies of various sphinx extensions for documentation.
 numpydoc
 sphinx-copybutton
 sphinx_rtd_theme
 sphinx-argparse
 sphinx_material
+sphinx_gallery
+sphinx_design
+sphinx-jsonschema

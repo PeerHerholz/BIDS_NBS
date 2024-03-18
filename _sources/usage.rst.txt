@@ -12,13 +12,13 @@ Execution and the BIDS format
 The general usage of ``bidsnbs`` is rather straightforward as it only requires the user to go through two steps: 1. Preparing the ``NBS metadata``
 and 2. run the ``conversion function`` to adapt and/or add respective ``BIDS NBS`` ``metadata`` and ``tsv`` files to already `BIDS`-compliant datasets.
 The exact command to run ``bidsnbs`` depends on the Installation method and user. Regarding the latter ``bidsnbs`` 
-can either be used as a ``command line tool`` or directly within ``python``. Please refer to the `Tutorial <https://peerherholz.github.io/BIDS_NBS/walkthrough>`_ for a more detailed walkthrough.
+can either be used as a ``command line tool`` or directly within ``python``. Please refer to the `Tutorial <https://peerherholz.github.io/bidsnbs/walkthrough>`_ for a more detailed walkthrough.
 
 Please be aware that users need to fill out the generated ``template`` files manually by adding the respective information based on their setup and experiment.
 ou can use any text editor capable of reading and writing ``json`` files to open the file, fill in the information
 and save it. Examples are `VScode <https://code.visualstudio.com/>`_, `Atom <https://atom-editor.cc/>`_, `PyCharm <https://www.jetbrains.com/pycharm/>`_ and `Sublime <https://www.sublimetext.com/index2>`_ 
 (`RStudio <https://www.rstudio.com/categories/rstudio-ide/>`_ and `Matlab <https://mathworks.com/products/matlab.html>`_ should also work).
-For more information on the ``NBS template files``, please have a look `here <https://peerherholz.github.io/BIDS_NBS/NBS_files>`_.
+For more information on the ``NBS template files``, please have a look `here <https://peerherholz.github.io/bidsnbs/NBS_files>`_.
 
 Here's a very conceptual example of running ``bidsnbs`` via ``CLI``: ::
 
@@ -34,11 +34,11 @@ and here from within ``python``: ::
 
     nbs_files = get_nbs_files(bids_dataset)
 
-    bids_nbs = bids2nbs(bids_path=bids_dataset, nbs_path=nbs_files,
+    bidsnbs = bids2nbs(bids_path=bids_dataset, nbs_path=nbs_files,
                         optional_arguments)
 
 Below, we will focus on the ``CLI`` version. Thus, if you are interested in using ``bidsnbs`` directly within ``python``,
-please check the `Examples <https://peerherholz.github.io/BIDS_NBS/auto_examples/index>`_.
+please check the `Examples <https://peerherholz.github.io/bidsnbs/auto_examples/index>`_.
 
 Changing files in-place vs new BIDS dataset
 ==============================================

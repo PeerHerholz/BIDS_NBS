@@ -1,0 +1,97 @@
+{
+    "onset": {
+        "LongName": "onset of the trigger",
+        "Units": "seconds (s) from the beginning of the recording"
+        },
+        "duration": {
+            "LongName": "duration of the trigger",
+            "Units": "seconds (s)"
+        },
+        "trial_type": {
+            "LongName": "type of stimulation",
+            "Levels": {
+                "TMS_1": "stimulation type 1",
+                "TMS_2": "stimulation type 2",
+                "TMS_3": "stimulation type 3"
+            }
+        },
+        "value": {
+            "LongName": "trigger code. Except for <New segment> it should always be S 16",
+            "Levels": {
+                "S 16": "Trigger code"
+                }
+        },
+    "nibs_type": {
+        "Type": "TMS",
+        "Subtype": "spTMS",
+        "Description": "single pulse TMS",
+        "Manufacturer": "Magstim, Whitland, UK",
+        "DeviceModelName": "Magstim Super Rapid^2",
+        "DeviceSerialNumber": "S/N: 2423 REF: 3012-00 2018-09-27",
+        "CoilSpec": {
+            "CoilType": "figure-of-eight",
+            "CoilWingDiameter": {
+                "Value": "70",
+                "Unit": "mm"
+            },
+            "CoilModelName": "Double 70mm Alpha Coil",
+            "CoilSerialNumber": "n/a"
+        },
+        "DeviceFirmware": "n/a",
+        "SoftwareSpecification": {
+            "ChargeDelay": "NaN"
+        },
+        "AuditoryMasking": "earplugs",
+        "StimulationProcedure": "Four nodes of the DMN extracted from functional maps (see MRI session) were stimulated: left and right dorsolateral prefrontal cortex (DLPFC) and left and right inferior parietal lobule (IPL). The coordinates (stored in [the events.tsv ) of the point of local maxima in each node andthe structural MRI images (see MRI session) were input to the SofTaxic Neuronavigation [system (E.M.S. , Bologna, Italy) to guide an accurate and consistent positioning of the TMS coil. The order of stimulation target was randomized across participants. On each site, 120 biphasic TMS pulses were delivered with an inter-stimulus interval of 2–10 seconds. The coil was placed by the experimenter in a position tangential to the scalp, with an angle of approximately 45degrees between the interhemispheric sulcus and the coil handle, with the handle pointing backwards, for the DLPFC and 10degrees for the IPL.",
+    },
+    "nibs_stim_intensity": {
+        "StimulationIntensity": {
+            "Value": "100",
+            "Unit": "% rMT",
+            "UnitLongName": "percentage of resting motor threshold"
+        },
+        "MotorThreshold": {
+            "Type": "resting - (rMT)",
+            "Value": "65",
+            "Unit": "% MSO",
+            "UnitLongName": "percentage of maximum stimulator output",
+            "Target": "right first dorsal interosseus (rFDI)"
+        },
+        "PulseSpec": {
+            "Waveform": "biphasic",
+            "PulseWitdh": {
+                "Value": "NaN",
+                "Unit": "microseconds",
+                "PrimaryEFieldDirection": "A/P",
+                "SecondaryEFieldDirection": "P/A"
+            },
+		"InterStimulusInterval": {
+                "Interval": "[2 10]",
+                "Unit": "s",
+                "Mode": "random"
+            },
+            "PulsesNumber": "120""StimulationIntensityProcedure": "the coil location corresponding to the hotspot for the right first dorsal interosseousmuscle was identified and the resting motor threshold (rMT) was measured as the lowest intensity producing motor-evoked potentials of over 50 microV in a minimum of 5 out of 10 trials in the electromyogram recorded with bipolar montage (Rossini et al., 2015)"
+        },
+        "nibs_target": {
+            "LongName": "trigger code. Except for <New segment> it should always be S 16",
+            "Levels": {
+                "S 16": "Trigger code"
+            }
+        },
+        "nibs_target_coord": {
+            "PositioningMatrix_1": "NaN",
+            "pos_ydir_1": "NaN",
+            "photo": "n/a",
+            "CoordinateSystem": "MNIColin27",
+            "CoordinateUnits": "mm",
+            "CoordinateSystemDescription": "RAS - 0 is at the center of the head.""NeuronavigationSoftware": "SofTaxic Neuronavigation system (E.M.S. , Bologna, Italy)",
+            "NeuronavigationSoftwareVersions": "3.2",
+            "CameraManufacturer": "Northern Digital Inc (NDI)",
+            "CameraModelName": "NDI Polaris Spectra",
+            "CameraSerialNumber": "P7-06652",
+            "NeuronavigationInput": "sub-01/ses-mri/anat/sub-01_[...]_T1w.json",
+            "NeuronavigationAdditionalInfo": "n/a",
+            "description": "T1w MRI of each subject was used to reconstruct the individual scalp and cortex. The coordinate of the target (center of gravity of the DMN higest z-score nodes for the parietalsites and of the ECN nodes for the frontal sites (extracted from each individual restingstate fMRIs)) were input in the neuronavigatio software and used to guide the coil positioning. The coil was oriented apporximatly at 45 degrees from the interhemispheric sulcus, handle pointing postero-medially, for the DLPFC target. For the IPL targets coil was oriented approximatelly at 15 degress from the interhemispheric sulcus, handle pointing postero-medially",
+        }
+    }
+}

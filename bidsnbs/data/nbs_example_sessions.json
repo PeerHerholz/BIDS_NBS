@@ -1,0 +1,23 @@
+{
+    "session_id": {
+        "LongName": "name of the session"
+    },
+    "acq_time": {
+        "LongName": "when was the session acquired?",
+        "Units": "date/time"
+    },  
+    "intervention_type": {
+            "LongName": "what type of intervention happened?",
+            "Levels": {
+                "NIBS": {
+                    "type": "TMS",
+                    "subtype" : "rTMS",
+                    "frequency": {
+                        "Value": "20",
+                        "unit": "Hz",
+                        "intervention_schedule": "Please add"
+                    }
+                }
+            }           
+        }
+}

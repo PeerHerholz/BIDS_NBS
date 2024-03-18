@@ -1,6 +1,6 @@
 {
     "session_id": {
-        "LongName": "Please add"
+        "LongName": "name of the session"
     },
     "acq_time": {
         "LongName": "when was the session acquired?",

@@ -47,7 +47,8 @@ extensions = [
     'sphinx_gallery.gen_gallery',
     'sphinxarg.ext',
     'sphinx_design',
-    'sphinx-jsonschema'
+    'sphinx-jsonschema',
+    'sphinx_tabs.tabs'
 ]
 
 # Configuration options for plot_directive. See:

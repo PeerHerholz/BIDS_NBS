@@ -2,4 +2,5 @@
 argparse
 pandas
 duecredit
+importlib_resources
 pybids

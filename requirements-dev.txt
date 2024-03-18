@@ -10,6 +10,7 @@ doctr
 ipython
 matplotlib
 seedir
+importlib_resources
 # These are dependencies of various sphinx extensions for documentation.
 numpydoc
 sphinx-copybutton
@@ -19,3 +20,4 @@ sphinx_material
 sphinx_gallery
 sphinx_design
 sphinx-jsonschema
+sphinx-tabs

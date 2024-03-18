@@ -13,7 +13,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/peerherholz/bids_atlas/issues.
+Report bugs at https://github.com/peerherholz/bidsnbs/issues.
 
 If you are reporting a bug, please include:
 
@@ -36,13 +36,13 @@ Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
 BIDS-Atlas could always use more documentation, whether
-as part of the official BIDS-Atlas docs, in docstrings,
+as part of the official bidsnbs docs, in docstrings,
 or even on the web in blog posts, articles, and such.
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/peerherholz/bids_atlas/issues.
+The best way to send feedback is to file an issue at https://github.com/peerherholz/bidsnbs/issues.
 
 If you are proposing a feature:
 
@@ -54,17 +54,17 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `bids_atlas` for local development.
+Ready to contribute? Here's how to set up ``bidsnbs`` for local development.
 
-1. Fork the `bids_atlas` repo on GitHub.
+1. Fork the ``bidsnbs`` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/bids_atlas.git
+    $ git clone git@github.com:your_name_here/bidsnbs.git
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
 
-    $ mkvirtualenv bids_atlas
-    $ cd bids_atlas/
+    $ mkvirtualenv bidsnbs
+    $ cd bidsnbs/
     $ python setup.py develop
 
 4. Create a branch for local development::
@@ -75,7 +75,7 @@ Ready to contribute? Here's how to set up `bids_atlas` for local development.
 
 5. When you're done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox::
 
-    $ flake8 bids_atlas tests
+    $ flake8 bidsnbs tests
     $ python setup.py test
     $ tox
 
@@ -99,6 +99,6 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work for Python 2.7, 3.3, 3.4, 3.5 and for PyPy. Check
-   https://travis-ci.org/peerherholz/bids_atlas/pull_requests
+   https://travis-ci.org/peerherholz/bidsnbs/pull_requests
    and make sure that the tests pass for all supported Python versions.
 

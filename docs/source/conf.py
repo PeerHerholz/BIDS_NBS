@@ -234,7 +234,7 @@ sphinx_gallery_conf = {
 html_theme_options = {
 
     # Set the name of the project to appear in the navigation.
-    'nav_title': 'BIDS NBS',
+    'nav_title': 'bidsnbs',
 
     # Specify a base_url used to generate sitemap.xml. If not
     # specified, then no sitemap will be built.
@@ -246,7 +246,7 @@ html_theme_options = {
 
     # Set the repo location to get a badge with stats
     'repo_url': 'https://github.com/PeerHerholz/bidsnbs',
-    'repo_name': 'BIDS NBS',
+    'repo_name': 'bidsnbs',
 
     # Visible levels of the global TOC; -1 means unlimited
     'globaltoc_depth': 1,

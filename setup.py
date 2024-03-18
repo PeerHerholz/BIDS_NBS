@@ -41,7 +41,7 @@ setup(
     long_description=readme,
     author="Peer Herholz",
     author_email='herholz.peer@gmail.com',
-    url='https://github.com/peerherholz/BIDS_NBS',
+    url='https://github.com/peerherholz/bidsnbs',
     python_requires='>={}'.format('.'.join(str(n) for n in min_version)),
     packages=find_packages(exclude=['docs', 'tests']),
     entry_points={

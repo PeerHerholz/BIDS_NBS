@@ -1,6 +1,6 @@
-==========
-BIDS NBS
-==========
+=======
+bidsnbs
+=======
 
 
 .. image:: https://github.com/PeerHerholz/BIDS_NBS/actions/workflows/docs.yml/badge.svg

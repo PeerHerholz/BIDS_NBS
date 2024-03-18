@@ -9,10 +9,16 @@ Usage
 Execution and the BIDS format
 =============================
 
-The general usage of ``bidsnbs`` is rather straightforward as it only requires the user to go through two steps: 1. Preparing the `NBS metadata` 
-and 2. run the `conversion function` to adapt and/or add respective `BIDS NBS` `metadata` to already `BIDS`-compliant datasets.
+The general usage of ``bidsnbs`` is rather straightforward as it only requires the user to go through two steps: 1. Preparing the ``NBS metadata``
+and 2. run the ``conversion function`` to adapt and/or add respective ``BIDS NBS`` ``metadata`` and ``tsv`` files to already `BIDS`-compliant datasets.
 The exact command to run ``bidsnbs`` depends on the Installation method and user. Regarding the latter ``bidsnbs`` 
 can either be used as a ``command line tool`` or directly within ``python``. Please refer to the `Tutorial <https://peerherholz.github.io/BIDS_NBS/walkthrough>`_ for a more detailed walkthrough.
+
+Please be aware that users need to fill out the generated ``template`` files manually by adding the respective information based on their setup and experiment.
+ou can use any text editor capable of reading and writing ``json`` files to open the file, fill in the information
+and save it. Examples are `VScode <https://code.visualstudio.com/>`_, `Atom <https://atom-editor.cc/>`_, `PyCharm <https://www.jetbrains.com/pycharm/>`_ and `Sublime <https://www.sublimetext.com/index2>`_ 
+(`RStudio <https://www.rstudio.com/categories/rstudio-ide/>`_ and `Matlab <https://mathworks.com/products/matlab.html>`_ should also work).
+For more information on the ``NBS template files``, please have a look `here <https://peerherholz.github.io/BIDS_NBS/NBS_files>`_.
 
 Here's a very conceptual example of running ``bidsnbs`` via ``CLI``: ::
 
@@ -34,9 +40,20 @@ and here from within ``python``: ::
 Below, we will focus on the ``CLI`` version. Thus, if you are interested in using ``bidsnbs`` directly within ``python``,
 please check the `Examples <https://peerherholz.github.io/BIDS_NBS/auto_examples/index>`_.
 
-Changing metadata in-place vs new BIDS dataset
+Changing files in-place vs new BIDS dataset
 ==============================================
 
+As ``bidsnbs`` adapts ``BIDS``-compliant datasets to be ``BIDS-NBS`` compliant, already existing files, ie ``events`` and ``sessions``, need
+to be adapted by adding/changing ``columns`` (in ``tsv`` files) and ``metadata`` (in ``json`` files). To facilitate this conversion and data version control,
+users have two options to run ``bidsnbs``:
+
+1. change files in-place by running ``bidsnbs`` without the ``--new_bids_dir`` argument
+2. created a new ``BIDS`` dataset by running ``bidsnbs`` with the ``--new_bids_dir`` argument, specifying a respective path
+
+In case of 2., the already existing ``BIDS`` dataset will be copied to the ``path`` specified via ``--new_bids_dir`` and files will only
+be change there. The original ``BIDS`` dataset will not be changed in any way or form.
+
+Currently, there is no recommendation on which option to use but users have to decide based on their given case, aim and setup.
 
 Command-Line Arguments
 ======================
@@ -71,7 +88,8 @@ Here's what's in this call:
   directory that will be created in the `sourcedata/` directory of the `BIDS`-dataset (e.g. ``/home/user/BIDS_dataset/sourcedata/NBS``)
 
 The `NBS metadata` templates then need to filled with the respective information for a given study and can then
-be used in the second step.
+be used in the second step. You can use any text editor capable of reading and writing ``json`` files to open the file, fill in the information
+and save it. 
 
 Step 2: Running the NBS conversion 
 
@@ -85,6 +103,9 @@ Here's what's in this call:
 
 - The 1st positional argument is the directory the BIDS-compliant dataset is stored in (e.g. ``/home/user``)
 - The 2nd positional argument is the directory the NBS file is stored in (e.g. ``/home/user``)
+
+After the command finished, the ``events.tsv`` and ``sessions.tsv`` files should have new ``columns`` and respective values and
+the ``events.json`` and ``sessions.json`` files new/adapted ``metadata``, based on the information provided in the ``NBS template files``.
 
 Example 2
 ~~~~~~~~~
@@ -104,6 +125,8 @@ Here's what's in this call:
   dataset, a respective new dataset will be created by copying the original to the indicated path and then applying the `metadata` conversion.
   Here, it a new `BIDS dataset` will be created under `/home/user`
 
+After the command finished, the ``events.tsv`` and ``sessions.tsv`` files should have new ``columns`` and respective values and
+the ``events.json`` and ``sessions.json`` files new/adapted ``metadata``, based on the information provided in the ``NBS template files``.
 
 Support and communication
 =========================

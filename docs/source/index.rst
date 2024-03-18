@@ -38,8 +38,8 @@
 Introduction
 ============
 
-``bidsnbs`` aims to provide a set of tools for working with `BIDS NBS`, specifically the 
-conversion from `BIDS`-compliant datasets to `BIDS-NBS`-compliant datasets by adapting and adding respective metadata information. 
+``bidsnbs`` aims to provide a set of tools for working with ``BIDS NBS``, specifically the 
+conversion from ``BIDS``-compliant datasets to ``BIDS-NBS``-compliant datasets by adapting and adding respective ``metadata information`` and ``tsv`` files. 
 
 This documentation showcases the respective functionality and provides details concerning
 its application and modules.
@@ -54,6 +54,7 @@ Contents
 
    installation
    usage
+   NBS_files
    walkthrough
    auto_examples/index
    api_ref

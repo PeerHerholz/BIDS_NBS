@@ -1,0 +1,6 @@
+﻿bidsnbs.utils.check\_path
+=========================
+
+.. currentmodule:: bidsnbs.utils
+
+.. autofunction:: check_path

@@ -46,7 +46,7 @@
   
   
   
-    <title>Usage &#8212; bidsnbs 0+untagged.1.g19d8168 documentation</title>
+    <title>Usage &#8212; bidsnbs 0+untagged.1.g826caf4 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="_static/material.css?v=79c92029" />
     <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
@@ -55,8 +55,9 @@
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <script src="_static/documentation_options.js?v=cafad7a3"></script>
+    <script src="_static/documentation_options.js?v=337bfdc1"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -64,7 +65,7 @@
     <script src="_static/design-tabs.js?v=36754332"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorial walkthrough" href="walkthrough.html" />
+    <link rel="next" title="The BIDS-NBS metadata file templates" href="NBS_files.html" />
     <link rel="prev" title="Installation" href="installation.html" />
   
    
@@ -89,7 +90,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="index.html" title="bidsnbs 0+untagged.1.g19d8168 documentation"
+        <a href="index.html" title="bidsnbs 0+untagged.1.g826caf4 documentation"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -175,7 +176,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">bidsnbs 0+untagged.1.g19d8168 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">bidsnbs 0+untagged.1.g826caf4 documentation</a></li>
       </ul>
     </div>
   </nav>
@@ -187,13 +188,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="index.html" title="bidsnbs 0+untagged.1.g19d8168 documentation" class="md-nav__button md-logo">
+    <a href="index.html" title="bidsnbs 0+untagged.1.g826caf4 documentation" class="md-nav__button md-logo">
       
         <img src="_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="index.html"
-       title="bidsnbs 0+untagged.1.g19d8168 documentation">BIDS NBS</a>
+       title="bidsnbs 0+untagged.1.g826caf4 documentation">BIDS NBS</a>
   </label>
     <div class="md-nav__source">
       <a href="https://github.com/PeerHerholz/bidsnbs" title="Go to repository" class="md-source" data-md-source="github">
@@ -237,7 +238,7 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#execution-and-the-bids-format" class="md-nav__link">Execution and the BIDS format</a>
         </li>
-        <li class="md-nav__item"><a href="#changing-metadata-in-place-vs-new-bids-dataset" class="md-nav__link">Changing metadata in-place vs new BIDS dataset</a>
+        <li class="md-nav__item"><a href="#changing-files-in-place-vs-new-bids-dataset" class="md-nav__link">Changing files in-place vs new BIDS dataset</a>
         </li>
         <li class="md-nav__item"><a href="#command-line-arguments" class="md-nav__link">Command-Line Arguments</a><nav class="md-nav">
               <ul class="md-nav__list">
@@ -266,6 +267,13 @@
 
   </ul>
 </nav>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="NBS_files.html" class="md-nav__link">The BIDS-NBS metadata file templates</a>
       
     
     </li>
@@ -322,7 +330,7 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#execution-and-the-bids-format" class="md-nav__link">Execution and the BIDS format</a>
         </li>
-        <li class="md-nav__item"><a href="#changing-metadata-in-place-vs-new-bids-dataset" class="md-nav__link">Changing metadata in-place vs new BIDS dataset</a>
+        <li class="md-nav__item"><a href="#changing-files-in-place-vs-new-bids-dataset" class="md-nav__link">Changing files in-place vs new BIDS dataset</a>
         </li>
         <li class="md-nav__item"><a href="#command-line-arguments" class="md-nav__link">Command-Line Arguments</a><nav class="md-nav">
               <ul class="md-nav__list">
@@ -364,10 +372,15 @@
 <span id="id1"></span><h1 id="usage--page-root">Usage<a class="headerlink" href="#usage--page-root" title="Link to this heading">¶</a></h1>
 <section id="execution-and-the-bids-format">
 <h2 id="execution-and-the-bids-format">Execution and the BIDS format<a class="headerlink" href="#execution-and-the-bids-format" title="Link to this heading">¶</a></h2>
-<p>The general usage of <code class="docutils literal notranslate"><span class="pre">bidsnbs</span></code> is rather straightforward as it only requires the user to go through two steps: 1. Preparing the <cite>NBS metadata</cite>
-and 2. run the <cite>conversion function</cite> to adapt and/or add respective <cite>BIDS NBS</cite> <cite>metadata</cite> to already <cite>BIDS</cite>-compliant datasets.
+<p>The general usage of <code class="docutils literal notranslate"><span class="pre">bidsnbs</span></code> is rather straightforward as it only requires the user to go through two steps: 1. Preparing the <code class="docutils literal notranslate"><span class="pre">NBS</span> <span class="pre">metadata</span></code>
+and 2. run the <code class="docutils literal notranslate"><span class="pre">conversion</span> <span class="pre">function</span></code> to adapt and/or add respective <code class="docutils literal notranslate"><span class="pre">BIDS</span> <span class="pre">NBS</span></code> <code class="docutils literal notranslate"><span class="pre">metadata</span></code> and <code class="docutils literal notranslate"><span class="pre">tsv</span></code> files to already <cite>BIDS</cite>-compliant datasets.
 The exact command to run <code class="docutils literal notranslate"><span class="pre">bidsnbs</span></code> depends on the Installation method and user. Regarding the latter <code class="docutils literal notranslate"><span class="pre">bidsnbs</span></code>
 can either be used as a <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">line</span> <span class="pre">tool</span></code> or directly within <code class="docutils literal notranslate"><span class="pre">python</span></code>. Please refer to the <a class="reference external" href="https://peerherholz.github.io/BIDS_NBS/walkthrough">Tutorial</a> for a more detailed walkthrough.</p>
+<p>Please be aware that users need to fill out the generated <code class="docutils literal notranslate"><span class="pre">template</span></code> files manually by adding the respective information based on their setup and experiment.
+ou can use any text editor capable of reading and writing <code class="docutils literal notranslate"><span class="pre">json</span></code> files to open the file, fill in the information
+and save it. Examples are <a class="reference external" href="https://code.visualstudio.com/">VScode</a>, <a class="reference external" href="https://atom-editor.cc/">Atom</a>, <a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a> and <a class="reference external" href="https://www.sublimetext.com/index2">Sublime</a>
+(<a class="reference external" href="https://www.rstudio.com/categories/rstudio-ide/">RStudio</a> and <a class="reference external" href="https://mathworks.com/products/matlab.html">Matlab</a> should also work).
+For more information on the <code class="docutils literal notranslate"><span class="pre">NBS</span> <span class="pre">template</span> <span class="pre">files</span></code>, please have a look <a class="reference external" href="https://peerherholz.github.io/BIDS_NBS/NBS_files">here</a>.</p>
 <p>Here’s a very conceptual example of running <code class="docutils literal notranslate"><span class="pre">bidsnbs</span></code> via <code class="docutils literal notranslate"><span class="pre">CLI</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bidsnbs</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">BIDS</span><span class="o">/</span><span class="n">dataset</span> <span class="o">--</span><span class="n">get_nbs_files</span>
 <span class="n">bidsnbs</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">BIDS</span><span class="o">/</span><span class="n">dataset</span> <span class="n">nbs_files</span> <span class="n">optional_arguments</span>
@@ -388,8 +401,18 @@ can either be used as a <code class="docutils literal notranslate"><span class="
 <p>Below, we will focus on the <code class="docutils literal notranslate"><span class="pre">CLI</span></code> version. Thus, if you are interested in using <code class="docutils literal notranslate"><span class="pre">bidsnbs</span></code> directly within <code class="docutils literal notranslate"><span class="pre">python</span></code>,
 please check the <a class="reference external" href="https://peerherholz.github.io/BIDS_NBS/auto_examples/index">Examples</a>.</p>
 </section>
-<section id="changing-metadata-in-place-vs-new-bids-dataset">
-<h2 id="changing-metadata-in-place-vs-new-bids-dataset">Changing metadata in-place vs new BIDS dataset<a class="headerlink" href="#changing-metadata-in-place-vs-new-bids-dataset" title="Link to this heading">¶</a></h2>
+<section id="changing-files-in-place-vs-new-bids-dataset">
+<h2 id="changing-files-in-place-vs-new-bids-dataset">Changing files in-place vs new BIDS dataset<a class="headerlink" href="#changing-files-in-place-vs-new-bids-dataset" title="Link to this heading">¶</a></h2>
+<p>As <code class="docutils literal notranslate"><span class="pre">bidsnbs</span></code> adapts <code class="docutils literal notranslate"><span class="pre">BIDS</span></code>-compliant datasets to be <code class="docutils literal notranslate"><span class="pre">BIDS-NBS</span></code> compliant, already existing files, ie <code class="docutils literal notranslate"><span class="pre">events</span></code> and <code class="docutils literal notranslate"><span class="pre">sessions</span></code>, need
+to be adapted by adding/changing <code class="docutils literal notranslate"><span class="pre">columns</span></code> (in <code class="docutils literal notranslate"><span class="pre">tsv</span></code> files) and <code class="docutils literal notranslate"><span class="pre">metadata</span></code> (in <code class="docutils literal notranslate"><span class="pre">json</span></code> files). To facilitate this conversion and data version control,
+users have two options to run <code class="docutils literal notranslate"><span class="pre">bidsnbs</span></code>:</p>
+<ol class="arabic simple">
+<li><p>change files in-place by running <code class="docutils literal notranslate"><span class="pre">bidsnbs</span></code> without the <code class="docutils literal notranslate"><span class="pre">--new_bids_dir</span></code> argument</p></li>
+<li><p>created a new <code class="docutils literal notranslate"><span class="pre">BIDS</span></code> dataset by running <code class="docutils literal notranslate"><span class="pre">bidsnbs</span></code> with the <code class="docutils literal notranslate"><span class="pre">--new_bids_dir</span></code> argument, specifying a respective path</p></li>
+</ol>
+<p>In case of 2., the already existing <code class="docutils literal notranslate"><span class="pre">BIDS</span></code> dataset will be copied to the <code class="docutils literal notranslate"><span class="pre">path</span></code> specified via <code class="docutils literal notranslate"><span class="pre">--new_bids_dir</span></code> and files will only
+be change there. The original <code class="docutils literal notranslate"><span class="pre">BIDS</span></code> dataset will not be changed in any way or form.</p>
+<p>Currently, there is no recommendation on which option to use but users have to decide based on their given case, aim and setup.</p>
 </section>
 <section id="command-line-arguments">
 <h2 id="command-line-arguments">Command-Line Arguments<a class="headerlink" href="#command-line-arguments" title="Link to this heading">¶</a></h2>
@@ -444,7 +467,8 @@ you to familiarize yourself with <code class="docutils literal notranslate"><spa
 directory that will be created in the <cite>sourcedata/</cite> directory of the <cite>BIDS</cite>-dataset (e.g. <code class="docutils literal notranslate"><span class="pre">/home/user/BIDS_dataset/sourcedata/NBS</span></code>)</p></li>
 </ul>
 <p>The <cite>NBS metadata</cite> templates then need to filled with the respective information for a given study and can then
-be used in the second step.</p>
+be used in the second step. You can use any text editor capable of reading and writing <code class="docutils literal notranslate"><span class="pre">json</span></code> files to open the file, fill in the information
+and save it.</p>
 <p>Step 2: Running the NBS conversion</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bidsnbs<span class="w"> </span><span class="se">\</span>
 /home/user/BIDS_dataset
@@ -456,6 +480,8 @@ be used in the second step.</p>
 <li><p>The 1st positional argument is the directory the BIDS-compliant dataset is stored in (e.g. <code class="docutils literal notranslate"><span class="pre">/home/user</span></code>)</p></li>
 <li><p>The 2nd positional argument is the directory the NBS file is stored in (e.g. <code class="docutils literal notranslate"><span class="pre">/home/user</span></code>)</p></li>
 </ul>
+<p>After the command finished, the <code class="docutils literal notranslate"><span class="pre">events.tsv</span></code> and <code class="docutils literal notranslate"><span class="pre">sessions.tsv</span></code> files should have new <code class="docutils literal notranslate"><span class="pre">columns</span></code> and respective values and
+the <code class="docutils literal notranslate"><span class="pre">events.json</span></code> and <code class="docutils literal notranslate"><span class="pre">sessions.json</span></code> files new/adapted <code class="docutils literal notranslate"><span class="pre">metadata</span></code>, based on the information provided in the <code class="docutils literal notranslate"><span class="pre">NBS</span> <span class="pre">template</span> <span class="pre">files</span></code>.</p>
 </section>
 <section id="example-2">
 <h4 id="example-2">Example 2<a class="headerlink" href="#example-2" title="Link to this heading">¶</a></h4>
@@ -473,6 +499,8 @@ be used in the second step.</p>
 dataset, a respective new dataset will be created by copying the original to the indicated path and then applying the <cite>metadata</cite> conversion.
 Here, it a new <cite>BIDS dataset</cite> will be created under <cite>/home/user</cite></p></li>
 </ul>
+<p>After the command finished, the <code class="docutils literal notranslate"><span class="pre">events.tsv</span></code> and <code class="docutils literal notranslate"><span class="pre">sessions.tsv</span></code> files should have new <code class="docutils literal notranslate"><span class="pre">columns</span></code> and respective values and
+the <code class="docutils literal notranslate"><span class="pre">events.json</span></code> and <code class="docutils literal notranslate"><span class="pre">sessions.json</span></code> files new/adapted <code class="docutils literal notranslate"><span class="pre">metadata</span></code>, based on the information provided in the <code class="docutils literal notranslate"><span class="pre">NBS</span> <span class="pre">template</span> <span class="pre">files</span></code>.</p>
 </section>
 </section>
 </section>
@@ -522,12 +550,12 @@ Datalad also performs version control over your data.</p>
             </a>
           
           
-            <a href="walkthrough.html" title="Tutorial walkthrough"
+            <a href="NBS_files.html" title="The BIDS-NBS metadata file templates"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> "Next" </span> Tutorial walkthrough </span>
+                class="md-footer-nav__direction"> "Next" </span> The BIDS-NBS metadata file templates </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>

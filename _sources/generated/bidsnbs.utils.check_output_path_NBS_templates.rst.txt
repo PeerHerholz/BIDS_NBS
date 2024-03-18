@@ -1,0 +1,6 @@
+﻿bidsnbs.utils.check\_output\_path\_NBS\_templates
+=================================================
+
+.. currentmodule:: bidsnbs.utils
+
+.. autofunction:: check_output_path_NBS_templates

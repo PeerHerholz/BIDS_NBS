@@ -1,0 +1,6 @@
+﻿bidsnbs.utils.generate\_json\_sidecar\_file
+===========================================
+
+.. currentmodule:: bidsnbs.utils
+
+.. autofunction:: generate_json_sidecar_file

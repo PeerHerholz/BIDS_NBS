@@ -1,0 +1,6 @@
+﻿bidsnbs.utils.validate\_input\_dir
+==================================
+
+.. currentmodule:: bidsnbs.utils
+
+.. autofunction:: validate_input_dir

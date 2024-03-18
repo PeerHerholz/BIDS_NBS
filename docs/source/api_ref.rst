@@ -35,3 +35,8 @@ Reference API
 .. autosummary::
    :template: function.rst
    :toctree: generated/
+
+   bidsnbs.utils.check_path
+   bidsnbs.utils.check_output_path_NBS_templates
+   bidsnbs.utils.generate_json_sidecar_file
+   bidsnbs.utils.validate_input_dir

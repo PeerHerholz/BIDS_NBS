@@ -46,7 +46,7 @@ setup(
     packages=find_packages(exclude=['docs', 'tests']),
     entry_points={
         'console_scripts': [
-            'bidsnbs = bidsnbs.run_bidsnbs:run_bidsnbs',
+            'bidsnbs = bidsnbs.bidsnbs_cli:run_bidsnbs',
             # 'command = some.module:some_function',
         ],
     },

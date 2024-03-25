@@ -1,0 +1,6 @@
+﻿bidsnbs.conversion.add\_nbs\_file\_metadata\_subject\_events\_json
+==================================================================
+
+.. currentmodule:: bidsnbs.conversion
+
+.. autofunction:: add_nbs_file_metadata_subject_events_json

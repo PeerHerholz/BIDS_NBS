@@ -22,6 +22,9 @@ Reference API
    :template: function.rst
    :toctree: generated/
 
+   bidsnbs.conversion.add_nbs_file_metadata_subject_events_json
+
+
 .. _ref_utils:
 
 :mod:`bidsnbs.utils` - Utility functions

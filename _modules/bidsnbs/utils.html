@@ -45,7 +45,7 @@
   
   
   
-    <title>bidsnbs.utils &#8212; bidsnbs 0+untagged.1.gd81e0a5 documentation</title>
+    <title>bidsnbs.utils &#8212; bidsnbs 0+untagged.1.g64b63c1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css?v=79c92029" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
@@ -56,7 +56,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <script src="../../_static/documentation_options.js?v=898d6518"></script>
+    <script src="../../_static/documentation_options.js?v=62942e57"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -88,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../index.html" title="bidsnbs 0+untagged.1.gd81e0a5 documentation"
+        <a href="../../index.html" title="bidsnbs 0+untagged.1.g64b63c1 documentation"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -174,7 +174,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">bidsnbs 0+untagged.1.gd81e0a5 documentation</a></li>
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">bidsnbs 0+untagged.1.g64b63c1 documentation</a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Module code</a></li>
       </ul>
     </div>
@@ -187,13 +187,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../index.html" title="bidsnbs 0+untagged.1.gd81e0a5 documentation" class="md-nav__button md-logo">
+    <a href="../../index.html" title="bidsnbs 0+untagged.1.g64b63c1 documentation" class="md-nav__button md-logo">
       
         <img src="../../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../index.html"
-       title="bidsnbs 0+untagged.1.gd81e0a5 documentation">bidsnbs</a>
+       title="bidsnbs 0+untagged.1.g64b63c1 documentation">bidsnbs</a>
   </label>
     <div class="md-nav__source">
       <a href="https://github.com/PeerHerholz/bidsnbs" title="Go to repository" class="md-source" data-md-source="github">
@@ -320,16 +320,16 @@
 <span class="sd">    --------</span>
 <span class="sd">    Check if the indicated sourcedata directory exists in the current directory.</span>
 
-<span class="sd">    &gt;&gt;&gt; check_output_path(os.curdir)</span>
+<span class="sd">    &gt;&gt;&gt; check_output_path(os.curdir + '/bids_dataset/sourcedata')</span>
 
 <span class="sd">    Check if the indicated sourcedata directory exists at a given path, for</span>
 <span class="sd">    example, the user's Desktop.</span>
 
-<span class="sd">    &gt;&gt;&gt; check_output_path('/home/user/Desktop/BIDS_dataset')</span>
+<span class="sd">    &gt;&gt;&gt; check_output_path('/home/user/Desktop/BIDS_dataset/sourcedata')</span>
 <span class="sd">    """</span>
 
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dirs_exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
 
 
@@ -359,8 +359,8 @@
 <span class="sd">    &gt;&gt;&gt; check_output_path('/home/user/Desktop/BIDS_dataset')</span>
 <span class="sd">    """</span>
 
-    <span class="c1"># generate full path to atlas based on indicated output directory and atlas name</span>
-    <span class="n">nbs_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="s1">'BIDS_NBS_templates'</span><span class="p">)</span>
+    <span class="c1"># generate full path to NBS files based on indicated directoryname</span>
+    <span class="n">nbs_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'/sourcedata/BIDS_NBS_templates'</span>
 
     <span class="c1"># check if the path exists and if not create it</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">nbs_path</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
@@ -405,9 +405,14 @@
     <span class="c1"># get metadata for session</span>
     <span class="n">json_metadata_sessions</span> <span class="o">=</span> <span class="n">importlib_resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">'data/nbs_template_sessions.json'</span><span class="p">)</span>
 
+    <span class="n">nbs_path_events</span> <span class="o">=</span> <span class="n">nbs_path</span> <span class="o">+</span> <span class="s1">'/nbs_template_events.json'</span>
+    <span class="n">nbs_path_sessions</span> <span class="o">=</span> <span class="n">nbs_path</span> <span class="o">+</span> <span class="s1">'/nbs_template_sessions.json'</span>
+
     <span class="c1"># copy the files to the required directory</span>
-    <span class="n">copyfile</span><span class="p">(</span><span class="n">json_metadata_events</span><span class="p">,</span> <span class="n">nbs_path</span><span class="p">)</span>
-    <span class="n">copyfile</span><span class="p">(</span><span class="n">json_metadata_sessions</span><span class="p">,</span> <span class="n">nbs_path</span><span class="p">)</span></div>
+    <span class="n">copyfile</span><span class="p">(</span><span class="n">json_metadata_events</span><span class="p">,</span> <span class="n">nbs_path_events</span><span class="p">)</span>
+    <span class="n">copyfile</span><span class="p">(</span><span class="n">json_metadata_sessions</span><span class="p">,</span> <span class="n">nbs_path_sessions</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">nbs_path_events</span><span class="p">,</span> <span class="n">nbs_path_sessions</span></div>
 
 
 

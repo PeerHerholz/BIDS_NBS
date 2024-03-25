@@ -46,7 +46,7 @@
   
   
   
-    <title>Usage &#8212; bidsnbs 0+untagged.1.gd81e0a5 documentation</title>
+    <title>Usage &#8212; bidsnbs 0+untagged.1.g64b63c1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="_static/material.css?v=79c92029" />
     <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
@@ -57,7 +57,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <script src="_static/documentation_options.js?v=898d6518"></script>
+    <script src="_static/documentation_options.js?v=62942e57"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -90,7 +90,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="index.html" title="bidsnbs 0+untagged.1.gd81e0a5 documentation"
+        <a href="index.html" title="bidsnbs 0+untagged.1.g64b63c1 documentation"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -176,7 +176,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">bidsnbs 0+untagged.1.gd81e0a5 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">bidsnbs 0+untagged.1.g64b63c1 documentation</a></li>
       </ul>
     </div>
   </nav>
@@ -188,13 +188,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="index.html" title="bidsnbs 0+untagged.1.gd81e0a5 documentation" class="md-nav__button md-logo">
+    <a href="index.html" title="bidsnbs 0+untagged.1.g64b63c1 documentation" class="md-nav__button md-logo">
       
         <img src="_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="index.html"
-       title="bidsnbs 0+untagged.1.gd81e0a5 documentation">bidsnbs</a>
+       title="bidsnbs 0+untagged.1.g64b63c1 documentation">bidsnbs</a>
   </label>
     <div class="md-nav__source">
       <a href="https://github.com/PeerHerholz/bidsnbs" title="Go to repository" class="md-source" data-md-source="github">
@@ -413,14 +413,19 @@ users have two options to run <code class="docutils literal notranslate"><span c
 <p>In case of 2., the already existing <code class="docutils literal notranslate"><span class="pre">BIDS</span></code> dataset will be copied to the <code class="docutils literal notranslate"><span class="pre">path</span></code> specified via <code class="docutils literal notranslate"><span class="pre">--new_bids_dir</span></code> and files will only
 be change there. The original <code class="docutils literal notranslate"><span class="pre">BIDS</span></code> dataset will not be changed in any way or form.</p>
 <p>Currently, there is no recommendation on which option to use but users have to decide based on their given case, aim and setup.</p>
+<p>Independent of the use case, each file that is going to be adapted by <code class="docutils literal notranslate"><span class="pre">bidsnbs</span></code>, ie the <code class="docutils literal notranslate"><span class="pre">events</span></code> and <cite>session`</cite> files, will be backed up
+to <cite>sourcedata/BIDS_pre_NBS_backup/</cite> so that they are not lost and can be brought back into the <code class="docutils literal notranslate"><span class="pre">BIDS</span></code> dataset if needed (e.g. if something
+went wrong during the conversion).</p>
 </section>
 <section id="command-line-arguments">
 <h2 id="command-line-arguments">Command-Line Arguments<a class="headerlink" href="#command-line-arguments" title="Link to this heading">¶</a></h2>
 <p><p>a CLI for easing up the conversion from BIDS to BIDS-NBS datasets</p>
 </p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">bidsnbs</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">get_nbs_files</span> <span class="n">GET_NBS_FILES</span><span class="p">]</span>
-               <span class="p">[</span><span class="o">--</span><span class="n">new_bids_dir</span> <span class="n">NEW_BIDS_DIR</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span>
-               <span class="n">bids_dir</span> <span class="p">[</span><span class="n">nbs_files</span> <span class="o">...</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">bidsnbs</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">participant_label</span> <span class="n">PARTICIPANT_LABEL</span> <span class="p">[</span><span class="n">PARTICIPANT_LABEL</span> <span class="o">...</span><span class="p">]]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">get_nbs_files</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">new_bids_dir</span> <span class="n">NEW_BIDS_DIR</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">skip_bids_validation</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span>
+               <span class="n">bids_dir</span> <span class="p">[{</span><span class="n">participant</span><span class="p">,</span><span class="n">group</span><span class="p">}]</span>
 </pre></div>
 </div>
 <section id="positional-arguments">
@@ -429,19 +434,26 @@ be change there. The original <code class="docutils literal notranslate"><span c
 <dt><kbd>bids_dir</kbd></dt>
 <dd><p>The directory where the to-be-updated BIDS-compliant dataset is stored.</p>
 </dd>
-<dt><kbd>nbs_files</kbd></dt>
-<dd><p>NBS files to be used during metadata adaptation.</p>
+<dt><kbd>analysis_level</kbd></dt>
+<dd><p>Possible choices: participant, group</p>
+<p>Level of the analysis that will be performed. Multiple participant level analyses can be run independently (in parallel) using the same output_dir.</p>
 </dd>
 </dl>
 </section>
 <section id="named-arguments">
 <h3 id="named-arguments">Named Arguments<a class="headerlink" href="#named-arguments" title="Link to this heading">¶</a></h3>
 <dl class="option-list">
+<dt><kbd>--participant_label</kbd></dt>
+<dd><p>The label(s) of the participant(s) that should be analyzed. The label corresponds to sub-&lt;participant_label&gt; from the BIDS spec (so it does not include “sub-“). If this parameter is not provided all subjects should be analyzed. Multiple participants can be specified with a space separated list.</p>
+</dd>
 <dt><kbd>--get_nbs_files</kbd></dt>
 <dd><p>Indicating if NBS metadata template files should be stored under sourcedata in the specified BIDS datasetfor subsequent metadata information denotation and usage during the conversion.</p>
 </dd>
 <dt><kbd>--new_bids_dir</kbd></dt>
 <dd><p>The directory where the new BIDS-NBS compliant dataset should be stored, in case metadata should not be changed in-place.</p>
+</dd>
+<dt><kbd>--skip_bids_validation</kbd></dt>
+<dd><p>Assume the input dataset is BIDS compliant and skip the validation                              (default: False).</p>
 </dd>
 <dt><kbd>-v, --version</kbd></dt>
 <dd><p>show program’s version number and exit</p>

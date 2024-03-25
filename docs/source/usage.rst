@@ -55,6 +55,10 @@ be change there. The original ``BIDS`` dataset will not be changed in any way or
 
 Currently, there is no recommendation on which option to use but users have to decide based on their given case, aim and setup.
 
+Independent of the use case, each file that is going to be adapted by ``bidsnbs``, ie the ``events`` and `session`` files, will be backed up
+to `sourcedata/BIDS_pre_NBS_backup/` so that they are not lost and can be brought back into the ``BIDS`` dataset if needed (e.g. if something
+went wrong during the conversion).
+
 Command-Line Arguments
 ======================
 .. argparse::

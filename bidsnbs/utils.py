@@ -19,16 +19,16 @@ def check_path(path):
     --------
     Check if the indicated sourcedata directory exists in the current directory.
 
-    >>> check_output_path(os.curdir)
+    >>> check_output_path(os.curdir + '/bids_dataset/sourcedata')
 
     Check if the indicated sourcedata directory exists at a given path, for
     example, the user's Desktop.
 
-    >>> check_output_path('/home/user/Desktop/BIDS_dataset')
+    >>> check_output_path('/home/user/Desktop/BIDS_dataset/sourcedata')
     """
 
     if os.path.isdir(path) is False:
-        os.makedirs(path, dirs_exist_ok=True)
+        os.makedirs(path)
 
 
 # define function to check output path for NBS template files
@@ -55,8 +55,8 @@ def check_output_path_NBS_templates(path):
     >>> check_output_path('/home/user/Desktop/BIDS_dataset')
     """
 
-    # generate full path to atlas based on indicated output directory and atlas name
-    nbs_path = os.path.join(os.path.abspath(path), 'BIDS_NBS_templates')
+    # generate full path to NBS files based on indicated directoryname
+    nbs_path = os.path.abspath(path) + '/sourcedata/BIDS_NBS_templates'
 
     # check if the path exists and if not create it
     if os.path.isdir(nbs_path) is False:
@@ -98,9 +98,14 @@ def generate_json_sidecar_file(nbs_path):
     # get metadata for session
     json_metadata_sessions = importlib_resources.files(__name__).joinpath('data/nbs_template_sessions.json')
 
+    nbs_path_events = nbs_path + '/nbs_template_events.json'
+    nbs_path_sessions = nbs_path + '/nbs_template_sessions.json'
+
     # copy the files to the required directory
-    copyfile(json_metadata_events, nbs_path)
-    copyfile(json_metadata_sessions, nbs_path)
+    copyfile(json_metadata_events, nbs_path_events)
+    copyfile(json_metadata_sessions, nbs_path_sessions)
+
+    return nbs_path_events, nbs_path_sessions
 
 
 def validate_input_dir(exec_env, bids_dir, participant_label=None):

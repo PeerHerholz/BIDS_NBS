@@ -4,3 +4,4 @@ pandas
 duecredit
 importlib_resources
 pybids
+mne-bids

@@ -68,14 +68,14 @@
             },
             "PulsesNumber": "Please add",
             "StimulationIntensityProcedire": "Please add"
-        },
-        "nibs_target": {
+        }},
+    "nibs_target": {
             "LongName": "Please add",
             "Levels": {
                 "S 16": "Please add"
             }
         },
-        "nibs_target_coord": {
+    "nibs_target_coord": {
             "PositioningMatrix_1": "Please add",
             "pos_ydir_1": "Please add",
             "photo": "Please add",
@@ -90,5 +90,4 @@
             "NeuronavigationAdditionalInfo": "Please add",
             "description": "Please add"
         }
-    }
 }

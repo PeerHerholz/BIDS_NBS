@@ -72,14 +72,14 @@
             },
             "PulsesNumber": "120",
             "StimulationIntensityProcedure": "the coil location corresponding to the hotspot for the right first dorsal interosseousmuscle was identified and the resting motor threshold (rMT) was measured as the lowest intensity producing motor-evoked potentials of over 50 microV in a minimum of 5 out of 10 trials in the electromyogram recorded with bipolar montage (Rossini et al., 2015)"
-        },
-        "nibs_target": {
+        }},
+    "nibs_target": {
             "LongName": "trigger code. Except for <New segment> it should always be S 16",
             "Levels": {
                 "S 16": "Trigger code"
             }
         },
-        "nibs_target_coord": {
+    "nibs_target_coord": {
             "PositioningMatrix_1": "NaN",
             "pos_ydir_1": "NaN",
             "photo": "n/a",
@@ -95,5 +95,4 @@
             "NeuronavigationAdditionalInfo": "n/a",
             "description": "T1w MRI of each subject was used to reconstruct the individual scalp and cortex. The coordinate of the target (center of gravity of the DMN higest z-score nodes for the parietalsites and of the ECN nodes for the frontal sites (extracted from each individual restingstate fMRIs)) were input in the neuronavigatio software and used to guide the coil positioning. The coil was oriented apporximatly at 45 degrees from the interhemispheric sulcus, handle pointing postero-medially, for the DLPFC target. For the IPL targets coil was oriented approximatelly at 15 degress from the interhemispheric sulcus, handle pointing postero-medially"
         }
-    }
 }

@@ -45,7 +45,7 @@
   
   
   
-    <title>bidsnbs.conversion &#8212; bidsnbs 0+untagged.1.gdf6c49a documentation</title>
+    <title>bidsnbs.conversion &#8212; bidsnbs 0+untagged.1.g9a06992 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css?v=79c92029" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
@@ -56,7 +56,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <script src="../../_static/documentation_options.js?v=69894b14"></script>
+    <script src="../../_static/documentation_options.js?v=81cdc1c8"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -88,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../index.html" title="bidsnbs 0+untagged.1.gdf6c49a documentation"
+        <a href="../../index.html" title="bidsnbs 0+untagged.1.g9a06992 documentation"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -174,7 +174,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">bidsnbs 0+untagged.1.gdf6c49a documentation</a></li>
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">bidsnbs 0+untagged.1.g9a06992 documentation</a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Module code</a></li>
       </ul>
     </div>
@@ -187,13 +187,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../index.html" title="bidsnbs 0+untagged.1.gdf6c49a documentation" class="md-nav__button md-logo">
+    <a href="../../index.html" title="bidsnbs 0+untagged.1.g9a06992 documentation" class="md-nav__button md-logo">
       
         <img src="../../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../index.html"
-       title="bidsnbs 0+untagged.1.gdf6c49a documentation">bidsnbs</a>
+       title="bidsnbs 0+untagged.1.g9a06992 documentation">bidsnbs</a>
   </label>
     <div class="md-nav__source">
       <a href="https://github.com/PeerHerholz/bidsnbs" title="Go to repository" class="md-source" data-md-source="github">
@@ -298,7 +298,7 @@
             
   <h1 id="modules-bidsnbs-conversion--page-root">Source code for bidsnbs.conversion</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">seedir</span> <span class="k">as</span> <span class="nn">sd</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">copy</span>
 <span class="kn">from</span> <span class="nn">bidsnbs.utils</span> <span class="kn">import</span> <span class="n">check_path</span>
@@ -357,6 +357,71 @@
         <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">events_json_nbs_data</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">events_json_nbs_data</span></div>
+
+
+
+<div class="viewcode-block" id="add_nbs_file_metadata_subject_events_tsv">
+<a class="viewcode-back" href="../../generated/bidsnbs.conversion.add_nbs_file_metadata_subject_events_tsv.html#bidsnbs.conversion.add_nbs_file_metadata_subject_events_tsv">[docs]</a>
+<span class="k">def</span> <span class="nf">add_nbs_file_metadata_subject_events_tsv</span><span class="p">(</span><span class="n">events_tsv</span><span class="p">,</span> <span class="n">nbs_file_events</span><span class="p">,</span> <span class="n">bids_dir</span><span class="p">,</span> <span class="n">sub_id</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Add NBS keys from templates to existing events.tsv files.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    events_tsv : str or PosixPath</span>
+<span class="sd">        A string or PosixPath indicating the path to the existing events.tsv file.</span>
+<span class="sd">    nbs_file_events : str or PosixPath</span>
+<span class="sd">        A string or PosixPath indicating the path to the NBS events metadata file.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Updated events tsv.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Add NBS keys from templates to existing events.tsv files.</span>
+
+<span class="sd">    &gt;&gt;&gt;add_nbs_file_metadata_subject_events_tsv('/home/user/BIDS_dataset/sub-01/eeg/sub-01_task-rest_events.tsv',</span>
+<span class="sd">                                                 '/home/user/BIDS_dataset/sourcedata/BIDS_NBS_templates/nbs_template_events.json')</span>
+<span class="sd">    """</span>
+
+    <span class="c1"># open NBS metadata template json file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">nbs_file_events</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">nbs_file_events_tpl</span><span class="p">:</span>
+        <span class="n">nbs_file_events_tpl_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">nbs_file_events_tpl</span><span class="p">)</span>
+    
+    <span class="c1"># copy existing events.json to sourcedata as a backup</span>
+    <span class="k">if</span> <span class="s1">'ses-'</span> <span class="ow">in</span> <span class="n">events_tsv</span><span class="p">:</span>
+        <span class="n">ses_s</span> <span class="o">=</span> <span class="n">events_tsv</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'ses-'</span><span class="p">)</span><span class="o">+</span><span class="mi">4</span>
+        <span class="n">ses_e</span> <span class="o">=</span> <span class="n">events_tsv</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="n">ses_s</span><span class="p">)</span>
+        <span class="n">ses_id</span> <span class="o">=</span> <span class="n">events_tsv</span><span class="p">[</span><span class="n">ses_s</span><span class="p">:</span> <span class="n">ses_e</span><span class="p">]</span>
+        <span class="n">sub_bu_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">bids_dir</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'/sourcedata/BIDS_pre_NBS_backup/sub-</span><span class="si">%s</span><span class="s1">/ses-</span><span class="si">%s</span><span class="s1">/'</span> <span class="o">%</span> <span class="p">(</span><span class="n">sub_id</span><span class="p">,</span> <span class="n">ses_id</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sub_bu_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">bids_dir</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'/sourcedata/BIDS_pre_NBS_backup/sub-</span><span class="si">%s</span><span class="s1">/'</span> <span class="o">%</span> <span class="n">sub_id</span>
+
+    <span class="n">check_path</span><span class="p">(</span><span class="n">sub_bu_path</span><span class="p">)</span>
+    <span class="n">copy</span><span class="p">(</span><span class="n">events_tsv</span><span class="p">,</span> <span class="n">sub_bu_path</span> <span class="o">+</span> <span class="n">events_tsv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="c1"># create sub-dataframes per colum</span>
+    <span class="n">events_tsv_sub_onset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'onset'</span><span class="p">:</span> <span class="p">[]})</span>
+    <span class="n">events_tsv_sub_duration</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'duration'</span><span class="p">:</span> <span class="p">[]})</span>
+    <span class="n">events_tsv_sub_trial_type</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'trial_type'</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">nbs_file_events_tpl_data</span><span class="p">[</span><span class="s1">'trial_type'</span><span class="p">][</span><span class="s1">'Levels'</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())})</span>
+    <span class="n">events_tsv_sub_value</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'trial_type'</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">nbs_file_events_tpl_data</span><span class="p">[</span><span class="s1">'value'</span><span class="p">][</span><span class="s1">'Levels'</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())})</span>
+    <span class="n">events_tsv_sub_nibs_type</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'nbs_type'</span><span class="p">:</span> <span class="p">[</span><span class="n">nbs_file_events_tpl_data</span><span class="p">[</span><span class="s1">'nibs_type'</span><span class="p">][</span><span class="s1">'Type'</span><span class="p">]]})</span>
+    <span class="n">events_tsv_sub_nibs_stim_intensity</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'nibs_stim_intensity'</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">nbs_file_events_tpl_data</span><span class="p">[</span><span class="s1">'nibs_stim_intensity'</span><span class="p">][</span><span class="s1">'StimulationIntensity'</span><span class="p">][</span><span class="s1">'Value'</span><span class="p">])})</span>
+    <span class="n">events_tsv_sub_nibs_target</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'nibs_target'</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">nbs_file_events_tpl_data</span><span class="p">[</span><span class="s1">'nibs_target'</span><span class="p">][</span><span class="s1">'Levels'</span><span class="p">])})</span>
+    <span class="n">events_tsv_sub_nibs_target_coord</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'nibs_target'</span><span class="p">:</span> <span class="p">[[</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'z'</span><span class="p">]]})</span>
+
+    <span class="c1">#concatenate sub-dataframes</span>
+    <span class="n">events_tsv_sub</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">events_tsv_sub_onset</span><span class="p">,</span> <span class="n">events_tsv_sub_duration</span><span class="p">,</span>
+                                <span class="n">events_tsv_sub_trial_type</span><span class="p">,</span> <span class="n">events_tsv_sub_value</span><span class="p">,</span>
+                                <span class="n">events_tsv_sub_nibs_type</span><span class="p">,</span> <span class="n">events_tsv_sub_nibs_stim_intensity</span><span class="p">,</span>
+                                <span class="n">events_tsv_sub_nibs_target</span><span class="p">,</span> <span class="n">events_tsv_sub_nibs_target_coord</span><span class="p">],</span>
+                                <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># overwrite existing events.tsv file with updated data</span>
+    <span class="n">events_tsv_sub</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">events_tsv</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">events_tsv_sub</span></div>
 
 </pre></div>
 

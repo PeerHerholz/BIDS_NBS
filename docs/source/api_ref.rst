@@ -23,6 +23,7 @@ Reference API
    :toctree: generated/
 
    bidsnbs.conversion.add_nbs_file_metadata_subject_events_json
+   bidsnbs.conversion.add_nbs_file_metadata_subject_events_tsv
 
 
 .. _ref_utils:

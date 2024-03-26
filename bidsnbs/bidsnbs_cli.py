@@ -6,7 +6,8 @@ from shutil import copytree
 from bids import BIDSLayout
 from bidsnbs.utils import (check_path, check_output_path_NBS_templates, validate_input_dir,
                            generate_json_sidecar_file)
-from bidsnbs.conversion import (add_nbs_file_metadata_subject_events_json)
+from bidsnbs.conversion import (add_nbs_file_metadata_subject_events_json, 
+                                add_nbs_file_metadata_subject_events_tsv)
 
 
 # define parser to collect required inputs
@@ -183,7 +184,7 @@ def run_bidsnbs():
                 list_events_tsv = layout.get(subject=subject_label, extension='tsv', suffix='events',
                                              return_type='filename', session=sessions_to_analyze)
 
-            # loop over found event files, applying conversion
+            # loop over found event.json files, applying conversion
             for events_json in list_events_json:
 
                 # apply NBS conversion
@@ -191,6 +192,15 @@ def run_bidsnbs():
 
                 add_nbs_file_metadata_subject_events_json(events_json, nbs_events_tpl,
                                                           bids_dir_run, subject_label)
+
+            # loop over found event.tsv files, applying conversion
+            for events_tsv in list_events_tsv:
+
+                # apply NBS conversion
+                print('Updating the following events.tsv: %s' % events_tsv)
+
+                add_nbs_file_metadata_subject_events_tsv(events_tsv, nbs_events_tpl,
+                                                         bids_dir_run, subject_label)
 
 
 # run the CLI

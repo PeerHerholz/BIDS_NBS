@@ -24,9 +24,11 @@ def add_nbs_file_metadata_subject_events_json(events_json, nbs_file_events, bids
     --------
     Add NBS metadata from templates to existing events.json files.
 
-    >>>add_nbs_file_metadata_subject_events_json('/home/user/BIDS_dataset/sub-01/eeg/sub-01_task-rest_events.json',
+    >>> add_nbs_file_metadata_subject_events_tsv('/home/user/BIDS_dataset/sub-01/eeg/sub-01_task-rest_events.tsv',
                                                  '/home/user/BIDS_dataset/sourcedata/BIDS_NBS_templates/nbs_template_events.json')
     """
+
+    #>>>add_nbs_file_metadata_subject_events_json('/home/user/BIDS_dataset/sub-01/eeg/sub-01_task-rest_events.json','/home/user/BIDS_dataset/sourcedata/BIDS_NBS_templates/nbs_template_events.json')
 
     # open both json files
     with open(events_json, 'r') as events_json_nbs:
@@ -77,7 +79,7 @@ def add_nbs_file_metadata_subject_events_tsv(events_tsv, nbs_file_events, bids_d
     --------
     Add NBS keys from templates to existing events.tsv files.
 
-    >>>add_nbs_file_metadata_subject_events_tsv('/home/user/BIDS_dataset/sub-01/eeg/sub-01_task-rest_events.tsv',
+    >>> add_nbs_file_metadata_subject_events_tsv('/home/user/BIDS_dataset/sub-01/eeg/sub-01_task-rest_events.tsv',
                                                  '/home/user/BIDS_dataset/sourcedata/BIDS_NBS_templates/nbs_template_events.json')
     """
 

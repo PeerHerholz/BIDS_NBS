@@ -89,7 +89,7 @@ def generate_json_sidecar_file(nbs_path):
     --------
     Create NBS .json metadata template files.
 
-    >>>generate_json_sidecar_file('/home/user/BIDS_dataset/sourcedata/BIDS_NBS_templates')
+    >>> generate_json_sidecar_file('/home/user/BIDS_dataset/sourcedata/BIDS_NBS_templates')
     """
     
     # get metadata for events

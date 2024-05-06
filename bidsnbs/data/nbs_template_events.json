@@ -51,7 +51,5 @@
                 "Interval": "1.5-3",
                 "Unit": "seconds"
             },
-            "PulsesNumber": "Please add",
-            "StimulationIntensityProcedire": "Please add"
-        },
+    }
 }

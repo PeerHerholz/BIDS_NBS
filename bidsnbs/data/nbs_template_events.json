@@ -7,87 +7,51 @@
             "LongName": "duration of the trigger",
             "Units": "seconds (s)"
         },
+	"sample" : {
+		"LongName" : "onset of the stimulus in units of time. In other words, onset in seconds multiplied by the sampling rate",
+		"Units" : "No unit of measure. Starts at 1"
+		},
         "trial_type": {
-            "LongName": "type of stimulation",
-            "Levels": {
-            }
+		"LongName" : "type of stimulus. Except for the first event that usually is <New segment> (an automatic trigger for the begninning of the record), all the others should be <Biphasic TMS pulse> indicating a TMS pulse"
+		},
         },
         "value": {
-            "LongName": "Please add",
-            "Levels": {
-            }
+	    "LongName" : "trigger code. Except for <New segment> it should always be S 132"
         },
     "nibs_type": {
-        "Type": "Please add",
-        "Subtype": "Please add",
-        "Description": "Please add",
-        "Manufacturer": "Please add",
-        "DeviceModelName": "Please add",
-        "DeviceSerialNumber": "Please add",
-        "CoilSpec": {
-            "CoilType": "Please add",
-            "CoilWingDiameter": {
-                "Value": "Please add",
-                "Unit": "Please add"
-            },
-            "CoilModelName": "Please add",
-            "CoilSerialNumber": "Please add"
-        },
-        "DeviceFirmware": "Please add",
+		"Type" : "TMS",
+		"Subtype" : "spTMS",
+		"Description" : "single pulse TMS",
+		"Manufacturer" : "Magventure",
+		"DeviceModelName" : "MagPro X100",
+		"DeviceSerialNumber" : "n/a",
+		"CoilSpec" : {
+			"CoilType" : "figure-of-eight",
+			"CoilWingDiameter" : {
+				"Value" : "70",
+				"Unit" : "mm"
+				},
+			"CoilModelName" : "C-B60",
+			"CoilSerialNumber" : "n/a"
+			},
+        "DeviceFirmware": "n/a",
         "SoftwareSpecification": {
-            "ChargeDelay": "Please add"
+            "ChargeDelay": "1 second"
         },
-        "AuditoryMasking": "Please add",
-        "StimulationProcedure": "Please add"
+        "AuditoryMasking": "yes",
+        "StimulationProcedure": "The sites of stimulation were determined individually for each subject using their resting–state functional network maps. As sham, we performed a block of stimulation positioning the coil on Cz, with a 3 cm spacer that prevented meaningful currents from being generated in the cortex (for the efficacy of the 3 cm distance, refer to Rossi et al.62). The individual structural MRI and the coordinates of the point of local maxima for each node were input to the SofTaxic Neuronavigation system (E.M.S., Bologna, Italy) to guide the positioning of the coil on the correct spot. The order of stimulation (l–ECN, r–ECN, l–DMN, r–DMN and sham) was counterbalanced across participants and groups. For each site, 80 biphasic TMS pulses were delivered with a random ISI between 1.5 and 3 seconds. The coil was oriented at 45° degrees with respect to the interhemispheric sulcus for the frontal site, with electrical current direction anterior-to-posterior and posterior-to-anterior (ap-pa, biphasic stimulus). For the parietal sites, the coil was oriented at approximately 10° with respect to the interhemispheric sulcus, with electrical current direction medial-to-lateral lateral–to–medial (ml-lm, biphasic stimulus). The stimulator was set to recharge with a delay of one second to prevent recharging artifacts on the EEG signal."
     },
     "nibs_stim_intensity": {
         "StimulationIntensity": {
-            "Value": "Please add",
-            "Unit": "Please add",
-            "UnitLongName": "Please add"
+            "Value": "110%",
+            "Unit": "rMT",
+            "UnitLongName": "stimulation was set at 110% of the rMT"
         },
-        "MotorThreshold": {
-            "Type": "Please add",
-            "Value": "Please add",
-            "Unit": "Please add",
-            "UnitLongName": "Please add",
-            "Target": "Please add"
-        },
-        "PulseSpec": {
-            "Waveform": "Please add",
-            "PulseWitdh": {
-                "Value": "Please add",
-                "Unit": "Please add",
-                "PrimaryEFieldDirection": "Please add",
-                "SecondaryEFieldDirection": "Please add"
-            },
 		"InterStimulusInterval": {
-                "Interval": "Please add",
-                "Unit": "Please add",
-                "Mode": "Please add"
+                "Interval": "1.5-3",
+                "Unit": "seconds"
             },
             "PulsesNumber": "Please add",
             "StimulationIntensityProcedire": "Please add"
         }},
-    "nibs_target": {
-            "LongName": "Please add",
-            "Levels": {
-                "S 16": "Please add"
-            }
-        },
-    "nibs_target_coord": {
-            "PositioningMatrix_1": "Please add",
-            "pos_ydir_1": "Please add",
-            "photo": "Please add",
-            "CoordinateSystem": "Please add",
-            "CoordinateUnits": "Please add",
-            "CoordinateSystemDescription": "Please add",
-            "NeuronavigationSoftwareVersions": "Please add",
-            "CameraManufacturer": "Please add",
-            "CameraModelName": "Please add",
-            "CameraSerialNumber": "Please add",
-            "NeuronavigationInput": "Please add",
-            "NeuronavigationAdditionalInfo": "Please add",
-            "description": "Please add"
-        }
 }

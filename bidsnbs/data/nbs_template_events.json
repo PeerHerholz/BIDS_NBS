@@ -14,7 +14,6 @@
         "trial_type": {
 		"LongName" : "type of stimulus. Except for the first event that usually is <New segment> (an automatic trigger for the begninning of the record), all the others should be <Biphasic TMS pulse> indicating a TMS pulse"
 		},
-        },
         "value": {
 	    "LongName" : "trigger code. Except for <New segment> it should always be S 132"
         },

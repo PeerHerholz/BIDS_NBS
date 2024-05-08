@@ -1,6 +1,6 @@
 {
     "session_id": {
-        "LongName": "name of the session"
+        "LongName": "name of the session. T0 is baseline. T1_GB is the retest at ~ 1.5 years later. Both session are done in the exact same way"
     },
     "acq_time": {
         "LongName": "when was the session acquired?",
@@ -15,7 +15,7 @@
                     "frequency": {
                         "Value": "20",
                         "unit": "Hz",
-                        "intervention_schedule": "Please add"
+                        "intervention_schedule": "for the intensive phase - between session T0 and T1_NT - the rTMS treatment was delivered once a day monday to friday for 3 weeks. In the manteinance phase the rTMS treatment was delivered once every 2 weeks for 6 months."
                     }
                 }
             }           

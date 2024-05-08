@@ -28,36 +28,40 @@ def add_nbs_file_metadata_subject_events_json(events_json, nbs_file_events, bids
                                                  '/home/user/BIDS_dataset/sourcedata/BIDS_NBS_templates/nbs_template_events.json')
     """
 
-    #>>>add_nbs_file_metadata_subject_events_json('/home/user/BIDS_dataset/sub-01/eeg/sub-01_task-rest_events.json','/home/user/BIDS_dataset/sourcedata/BIDS_NBS_templates/nbs_template_events.json')
+    if ('acq-preTMS' in events_json) or ('acq-postTMS' in events_json):
 
-    # open both json files
-    with open(events_json, 'r') as events_json_nbs:
-        events_json_nbs_data = json.load(events_json_nbs)
+        print('No NBS applied, skipping file')
 
-    with open(nbs_file_events, 'r') as nbs_file_events_tpl:
-        nbs_file_events_tpl_data = json.load(nbs_file_events_tpl)
-    
-    # copy existing events.json to sourcedata as a backup
-    if 'ses-' in events_json:
-        ses_s = events_json.find('ses-')+4
-        ses_e = events_json.find('/', ses_s)
-        ses_id = events_json[ses_s: ses_e]
-        sub_bu_path = str(bids_dir) + '/sourcedata/BIDS_pre_NBS_backup/sub-%s/ses-%s/' % (sub_id, ses_id)
     else:
-        sub_bu_path = str(bids_dir) + '/sourcedata/BIDS_pre_NBS_backup/sub-%s/' % sub_id
 
-    check_path(sub_bu_path)
-    copy(events_json, sub_bu_path + events_json.split('/')[-1])
-    os.remove(events_json)
+        # open both json files
+        with open(events_json, 'r') as events_json_nbs:
+            events_json_nbs_data = json.load(events_json_nbs)
 
-    # add template metadata to existing events.json
-    events_json_nbs_data.update(nbs_file_events_tpl_data)
-    
-    # overwrite existing events.json file with updated data
-    with open(events_json, 'w') as output_file:
-        json.dump(events_json_nbs_data, output_file, indent=4)
+        with open(nbs_file_events, 'r') as nbs_file_events_tpl:
+            nbs_file_events_tpl_data = json.load(nbs_file_events_tpl)
+        
+        # copy existing events.json to sourcedata as a backup
+        if 'ses-' in events_json:
+            ses_s = events_json.find('ses-')+4
+            ses_e = events_json.find('/', ses_s)
+            ses_id = events_json[ses_s: ses_e]
+            sub_bu_path = str(bids_dir) + '/sourcedata/BIDS_pre_NBS_backup/sub-%s/ses-%s/' % (sub_id, ses_id)
+        else:
+            sub_bu_path = str(bids_dir) + '/sourcedata/BIDS_pre_NBS_backup/sub-%s/' % sub_id
 
-    return events_json_nbs_data
+        check_path(sub_bu_path)
+        copy(events_json, sub_bu_path + events_json.split('/')[-1])
+        os.remove(events_json)
+
+        # add template metadata to existing events.json
+        events_json_nbs_data.update(nbs_file_events_tpl_data)
+        
+        # overwrite existing events.json file with updated data
+        with open(events_json, 'w') as output_file:
+            json.dump(events_json_nbs_data, output_file, indent=4)
+
+        return events_json_nbs_data
 
 
 def add_nbs_file_metadata_subject_events_tsv(events_tsv, nbs_file_events, bids_dir, sub_id):
@@ -99,24 +103,53 @@ def add_nbs_file_metadata_subject_events_tsv(events_tsv, nbs_file_events, bids_d
     check_path(sub_bu_path)
     copy(events_tsv, sub_bu_path + events_tsv.split('/')[-1])
 
-    # create sub-dataframes per colum
-    events_tsv_sub_onset = pd.DataFrame({'onset': []})
-    events_tsv_sub_duration = pd.DataFrame({'duration': []})
-    events_tsv_sub_trial_type = pd.DataFrame({'trial_type': list(nbs_file_events_tpl_data['trial_type']['Levels'].keys())})
-    events_tsv_sub_value = pd.DataFrame({'trial_type': list(nbs_file_events_tpl_data['value']['Levels'].keys())})
-    events_tsv_sub_nibs_type = pd.DataFrame({'nbs_type': [nbs_file_events_tpl_data['nibs_type']['Type']]})
-    events_tsv_sub_nibs_stim_intensity = pd.DataFrame({'nibs_stim_intensity': list(nbs_file_events_tpl_data['nibs_stim_intensity']['StimulationIntensity']['Value'])})
-    events_tsv_sub_nibs_target = pd.DataFrame({'nibs_target': list(nbs_file_events_tpl_data['nibs_target']['Levels'])})
-    events_tsv_sub_nibs_target_coord = pd.DataFrame({'nibs_target': [['x', 'y', 'z']]})
+    # get NBS acquisition target
+    if 'acq-' in events_tsv:
+        acq_s = events_tsv.find('acq-') + 4
+        acq_e = events_tsv.rfind('_')
+        acq_id = events_tsv[acq_s: acq_e]
 
-    #concatenate sub-dataframes
-    events_tsv_sub = pd.concat([events_tsv_sub_onset, events_tsv_sub_duration,
-                                events_tsv_sub_trial_type, events_tsv_sub_value,
-                                events_tsv_sub_nibs_type, events_tsv_sub_nibs_stim_intensity,
-                                events_tsv_sub_nibs_target, events_tsv_sub_nibs_target_coord],
-                                axis=1)
+        if 'TMS' in acq_id:
+            acq_id = acq_id.replace('TMS', '')
 
-    # overwrite existing events.tsv file with updated data
-    events_tsv_sub.to_csv(events_tsv, sep='\t', index=False)
+    if ('acq-preTMS' in events_tsv) or ('acq-postTMS' in events_tsv):
 
-    return events_tsv_sub
+        print('No NBS applied, skipping file')
+
+    else:
+
+        # create sub-dataframes per colum
+        # events_tsv_sub_onset = pd.DataFrame({'onset': []})
+        # events_tsv_sub_duration = pd.DataFrame({'duration': []})
+        # events_tsv_sub_trial_type = pd.DataFrame({'trial_type': list(nbs_file_events_tpl_data['trial_type']['Levels'].keys())})
+        # events_tsv_sub_value = pd.DataFrame({'value': list(nbs_file_events_tpl_data['value']['Levels'].keys())})
+        # events_tsv_sub_nibs_type = pd.DataFrame({'nbs_type': [nbs_file_events_tpl_data['nibs_type']['Type']]})
+        # events_tsv_sub_nibs_stim_intensity = pd.DataFrame({'nibs_stim_intensity': list(nbs_file_events_tpl_data['nibs_stim_intensity']['StimulationIntensity']['Value'])})
+        # events_tsv_sub_nibs_target = pd.DataFrame({'nibs_target': acq_id})
+        # events_tsv_sub_nibs_target_coord = pd.DataFrame({'nibs_target_coord': [['x', 'y', 'z']]})
+
+        # # concatenate sub-dataframes
+        # events_tsv_sub = pd.concat([#events_tsv_sub_onset, events_tsv_sub_duration,
+        #                             events_tsv_sub_trial_type, events_tsv_sub_value,
+        #                             events_tsv_sub_nibs_type, events_tsv_sub_nibs_stim_intensity,
+        #                             events_tsv_sub_nibs_target, events_tsv_sub_nibs_target_coord],
+        #                            axis=1)
+
+        events_tsv_sub = pd.read_csv(events_tsv, sep='\t')
+
+        events_tsv_sub['trial_type']= list(nbs_file_events_tpl_data['trial_type']['Levels'].keys()) * len(events_tsv_sub)
+
+        events_tsv_sub['value']= list(nbs_file_events_tpl_data['value']['Levels'].keys()) * len(events_tsv_sub)
+
+        events_tsv_sub['nbs_type'] = [nbs_file_events_tpl_data['nibs_type']['Type']] * len(events_tsv_sub)
+
+        events_tsv_sub['nibs_stim_intensity'] = nbs_file_events_tpl_data['nibs_stim_intensity']['StimulationIntensity']['Value']
+        
+        events_tsv_sub['nibs_target'] = acq_id
+
+        events_tsv_sub['nibs_target_coord'] = [['x', 'y', 'z']] * len(events_tsv_sub)
+
+        # overwrite existing events.tsv file with updated data
+        events_tsv_sub.to_csv(events_tsv, sep='\t', index=False)
+
+        return events_tsv_sub

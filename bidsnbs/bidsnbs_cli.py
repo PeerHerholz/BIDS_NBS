@@ -155,8 +155,8 @@ def run_bidsnbs():
             print(sessions_to_analyze)
 
         # check if NBS files exist and if not, raise an Exception
-        nbs_events_tpl = str(bids_dir_run) + '/sourcedata/BIDS_NBS_templates/nbs_template_events.json'
-        nbs_sessions_tpl = str(bids_dir_run) + '/sourcedata/BIDS_NBS_templates/nbs_template_sessions.json'
+        nbs_events_tpl = glob.glob(str(bids_dir_run) + '/sourcedata/BIDS_NBS_templates/*_events.json')[0]
+        nbs_sessions_tpl = str(bids_dir_run) + '/sourcedata/BIDS_NBS_templates/*_sessions.json'
 
         # error if event files do not exist at indicated path
         if not os.path.exists(nbs_events_tpl):
@@ -164,25 +164,27 @@ def run_bidsnbs():
             print('Please check again and make sure to run step 1, ie --get_nbs_files first.')
             raise OSError
 
-        # error if session files do not exist at indicated path
-        if not os.path.exists(nbs_sessions_tpl) and sessions_to_analyze >= 1:
-            print('No NBS session metadata template found at: %s' % nbs_sessions_tpl)
-            print('Please check again and make sure to run step 1, ie --get_nbs_files first.')
-            raise OSError
+        # # error if session files do not exist at indicated path
+        # if not os.path.exists(nbs_sessions_tpl) and sessions_to_analyze >= 1:
+        #     print('No NBS session metadata template found at: %s' % nbs_sessions_tpl)
+        #     print('Please check again and make sure to run step 1, ie --get_nbs_files first.')
+        #     raise OSError
 
         # loop over subjects and run output conversion
         for subject_label in subjects_to_analyze:
             # get needed files and check if data from multiple sessions should be gathered
             if not sessions_to_analyze:
                 list_events_json = layout.get(subject=subject_label, extension='json', suffix='events',
-                                              return_type='filename')
+                                              return_type='filename', datatype='eeg')
                 list_events_tsv = layout.get(subject=subject_label, extension='tsv', suffix='events',
-                                             return_type='filename')
+                                             return_type='filename', datatype='eeg')
             else:
                 list_events_json = layout.get(subject=subject_label, extension='json', suffix='events',
-                                              return_type='filename', session=sessions_to_analyze)
+                                              return_type='filename', session=sessions_to_analyze, 
+                                              datatype='eeg')
                 list_events_tsv = layout.get(subject=subject_label, extension='tsv', suffix='events',
-                                             return_type='filename', session=sessions_to_analyze)
+                                             return_type='filename', session=sessions_to_analyze,
+                                             datatype='eeg')
 
             # loop over found event.json files, applying conversion
             for events_json in list_events_json:
